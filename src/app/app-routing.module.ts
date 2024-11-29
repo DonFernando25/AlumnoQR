@@ -27,17 +27,17 @@ const routes: Routes = [
   {
     path: 'calendario',
     loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'libros',
     loadChildren: () => import('./libros/libros.module').then( m => m.LibrosPageModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'dictionary',
     loadChildren: () => import('./dictionary/dictionary.module').then( m => m.DictionaryPageModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'camara',

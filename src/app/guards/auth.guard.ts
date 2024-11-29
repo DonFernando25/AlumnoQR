@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { SupabaseService } from '../supabase.service';
+import { AuthService } from '../auth.service';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authService: SupabaseService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  async canActivate(): Promise<boolean> {
-    const session = await this.authService.getSession();
-
-    if (session) {
-      return true; // Usuario autenticado, puede acceder
+  canActivate(): boolean {
+    if (this.authService.isLoggedIn()) {
+      return true; 
     } else {
-      this.router.navigate(['/login']); // Redirige al login si no está autenticado
+      this.router.navigate(['/login']); 
       return false;
     }
   }

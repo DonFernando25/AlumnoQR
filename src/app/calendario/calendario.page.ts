@@ -22,7 +22,7 @@ export class CalendarioPage implements OnInit {
 
   loadHolidays() {
     const year = new Date().getFullYear();
-    const country = 'CL'; // Cambia al código del país deseado
+    const country = 'CL';
 
     this.calendarificService.getHolidays(year, country).subscribe(
       (response: any) => {

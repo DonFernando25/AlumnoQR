@@ -50,5 +50,13 @@ export class SupabaseService {
   async insertAsistencia(data: any) {
     return await this.supabase.from('asistencia').insert([data]);
   }
+
+  async obtenerAsistencias() {
+    const { data, error } = await this.supabase
+      .from('asistencias') 
+      .select('*');
+    return { data, error };
+  }
+
 }
 

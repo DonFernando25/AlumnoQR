@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { CanComponentDeactivate } from '../guards/can-deactivate.guard';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { AuthService } from '../auth.service';
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
-export class InicioPage  implements CanComponentDeactivate {
+export class InicioPage {
 
   username: string = 'Invitado';
 
@@ -22,7 +21,9 @@ export class InicioPage  implements CanComponentDeactivate {
   }
 
   canDeactivate(): boolean {
-    const confirmLogout = confirm('¿Seguro que quieres salir? Esto cerrará tu sesión.');
+    const confirmLogout = confirm(
+      '¿Seguro que quieres salir? Esto cerrará tu sesión.'
+    );
     if (confirmLogout) {
       this.authService.logout();
     }
@@ -32,10 +33,7 @@ export class InicioPage  implements CanComponentDeactivate {
   
 
   goBack() {
-    const confirmLogout = this.canDeactivate(); 
-    if (confirmLogout) {
       this.navCtrl.navigateRoot(['/login']); 
-    }
   }
   
   goToPage(page: string) {

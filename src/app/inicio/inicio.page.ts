@@ -20,17 +20,6 @@ export class InicioPage {
     }
   }
 
-  canDeactivate(): boolean {
-    const confirmLogout = confirm(
-      '¿Seguro que quieres salir? Esto cerrará tu sesión.'
-    );
-    if (confirmLogout) {
-      this.authService.logout();
-    }
-    return confirmLogout;
-  }
-
-  
 
   goBack() {
       this.navCtrl.navigateRoot(['/login']); 

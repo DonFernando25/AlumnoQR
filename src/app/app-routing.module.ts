@@ -49,9 +49,11 @@ const routes: Routes = [
   {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
-  },  {
+  },
+  {
     path: 'asistencias',
-    loadChildren: () => import('./asistencias/asistencias.module').then( m => m.AsistenciasPageModule)
+    loadChildren: () => import('./asistencias/asistencias.module').then( m => m.AsistenciasPageModule),
+    canActivate: [AuthGuard],
   },
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from '../supabase.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-asistencias',
@@ -9,7 +10,7 @@ import { SupabaseService } from '../supabase.service';
 export class AsistenciasPage implements OnInit {
   asistencias: any[] = []; 
 
-  constructor(private supabaseService: SupabaseService) {}
+  constructor(private supabaseService: SupabaseService, private navCtrl: NavController) {}
 
   async ngOnInit() {
     await this.obtenerAsistencias();
@@ -23,4 +24,9 @@ export class AsistenciasPage implements OnInit {
       this.asistencias = data || [];
     }
   }
+
+  goBack() {
+    this.navCtrl.back();
+  }
+
 }

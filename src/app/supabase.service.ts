@@ -53,7 +53,7 @@ export class SupabaseService {
 
   async obtenerAsistencias() {
     const { data, error } = await this.supabase
-      .from('asistencias') 
+      .from('asistencia') 
       .select('*');
     return { data, error };
   }

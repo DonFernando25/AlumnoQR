@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { QrService } from '../servicios/qr.service';
 import { SupabaseService } from '../supabase.service';
 import { AlertController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-camara',
@@ -14,7 +15,7 @@ export class CamaraPage {
   JsonData : any
 
   constructor( private supabaseService: SupabaseService,
-    private alertController: AlertController,public qr : QrService) {}
+    private alertController: AlertController,public qr : QrService,private navCtrl: NavController) {}
 
   
     async Scaneo() {
@@ -78,7 +79,9 @@ export class CamaraPage {
       }
     }
     
-  
+    goBack() {
+      this.navCtrl.back();
+    }
 
   
   Flashlight(){

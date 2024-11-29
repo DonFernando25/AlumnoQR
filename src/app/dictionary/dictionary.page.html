@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Diccionario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-input [(ngModel)]="word" placeholder="Ingresa una palabra"></ion-input>
+    <ion-button (click)="search()">Buscar</ion-button>
+  </ion-item>
+
+  <div *ngIf="definition">
+    <h2>Definiciones de {{ word }}</h2>
+    <div *ngFor="let meaning of definition[0].meanings">
+      <h3>{{ meaning.partOfSpeech }}</h3>
+      <ul>
+        <li *ngFor="let def of meaning.definitions">
+          {{ def.definition }}<br />
+          <small *ngIf="def.example">Ejemplo: {{ def.example }}</small>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="!definition && word">
+    <p>No se encontraron resultados para "{{ word }}"</p>
+  </div>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Buscar Versículo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Libro y Versículo (Ej: Juan 3:16)</ion-label>
+    <ion-input [(ngModel)]="reference"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="searchVerse()">Buscar</ion-button>
+
+  <div *ngIf="verse">
+    <h2>{{ verse.reference }}</h2>
+    <p>{{ verse.text }}</p>
+  </div>
+</ion-content>

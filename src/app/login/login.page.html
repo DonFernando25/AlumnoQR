@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Nombre de Usuario</ion-label>
+          <ion-input [(ngModel)]="username" type="text"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+        
+        <ion-button class="custom-button" expand="block" (click)="login()">Ingresar</ion-button>
+        
+        <ion-text>
+          <p (click)="goToResetPassword()" style="text-align: center; cursor: pointer; color: blue;">
+            Restablecer Contraseña
+          </p>
+          
+        </ion-text>
+        <ion-text >
+          <p (click)="goToRegistro()" style="text-align: center; cursor: pointer; color: blue;">
+            Crear Cuenta
+          </p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

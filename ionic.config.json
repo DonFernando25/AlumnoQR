@@ -1,0 +1,7 @@
+{
+  "name": "RegistrAPPFer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

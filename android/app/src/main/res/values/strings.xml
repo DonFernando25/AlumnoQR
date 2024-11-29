@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AlumnoQR</string>
+    <string name="title_activity_main">AlumnoQR</string>
+    <string name="package_name">com.example.AlumnoQR</string>
+    <string name="custom_url_scheme">com.example.AlumnoQR</string>
+</resources>

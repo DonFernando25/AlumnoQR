@@ -1,0 +1,81 @@
+ion-content {
+  --background: url('/assets/img/Fondo.png') no-repeat center center/cover;
+  
+}
+
+
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+
+.overlay-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  
+  height: 100%; 
+}
+
+
+.overlay-box {
+  background-color: rgba(255, 255, 255, 0.8); 
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%; 
+}
+
+
+.overlay-text {
+  color: #000000;
+  font-size: 18px;
+}
+
+.animated-text {
+  text-align: center; 
+}
+
+.animated-text h1 {
+  font-size: 4rem;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s forwards ease-out;
+  text-shadow: 3px 3px 6px rgba(250,191,27, 1);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Restablecer Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text>
+          <p color style="text-align: center;">Ingrese su correo institucional para restablecer su contraseña</p>
+        </ion-text>
+        
+        <ion-item>
+          <ion-label position="floating">Correo Institucional</ion-label>
+          <ion-input [(ngModel)]="email" type="email"></ion-input>
+        </ion-item>
+        
+        <ion-button class="custom-button" expand="block" (click)="sendReset()">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

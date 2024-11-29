@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="gologin()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size="12">
+        <ion-button expand="block" class="custom-button" (click)="goToPage('calendario')">Calendario</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-center>
+      <ion-col size="12">
+        <ion-button expand="block" class="custom-button" (click)="goToPage('libros')">Libros</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-center>
+      <ion-col size="12">
+        <ion-button expand="block" class="custom-button" (click)="goToPage('dictionary')">Diccionario</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-center>
+      <ion-col size="12">
+        <ion-button expand="block" class="custom-button" (click)="goToPage('camara')">Cámara QR</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

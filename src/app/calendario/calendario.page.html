@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Días Festivos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <h2>Días Festivos</h2>
+  <ion-list>
+    <ion-item *ngFor="let holiday of holidays">
+      <ion-label>
+        <h2>{{ holiday.name }}</h2>
+        <p>{{ holiday.date.iso | date }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
